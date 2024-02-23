@@ -1,0 +1,70 @@
+To update code on GitHub from the Visual Studio Code (VSCode) terminal, you'll typically follow these steps:
+
+1. **Open the Terminal in VSCode:**
+   - Open VSCode.
+   - Press `Ctrl + `` (backtick) to open the integrated terminal.
+
+2. **Navigate to your project directory:**
+   - Use the `cd` command to change to the directory where your project is located.
+     ```bash
+     cd path/to/your/project
+     ```
+
+3. **Check Git status:**
+   - Before updating, it's a good idea to check the current status of your Git repository.
+     ```bash
+     git status
+     ```
+   - This will show you any changes that have been made.
+
+4. **Add and commit changes:**
+   - If there are changes that you want to update to GitHub, you need to add and commit them.
+     ```bash
+     git add .
+     git commit -m "Your commit message here"
+     ```
+
+5. **Push changes to GitHub:**
+   - Finally, push your changes to GitHub.
+     ```bash
+     git push
+     ```
+
+   - If it's your first time pushing to the repository or if you are pushing to a new branch, you might need to set the upstream branch.
+     ```bash
+     git push -u origin your_branch_name
+     ```
+
+   - Replace `your_branch_name` with the actual name of your branch.
+
+6. **Enter GitHub credentials:**
+   - If you haven't configured your Git with GitHub credentials, you might be prompted to enter your username and password or use a personal access token.
+
+That's it! Your code changes should now be updated on GitHub. Make sure you have the necessary permissions to push changes to the repository.
+
+****************************************************************************************
+****************************************************************************************
+If you want to amend the commit message for only specific files or changes in a particular folder, you can use the `--path` option with the `git log` command to identify the commit hash and then use `git commit --amend` to modify the commit message. Here are the steps:
+
+1. **Identify the commit hash:**
+   - Use `git log` with the `-- path` option to view the commit history for the specific folder.
+     ```bash
+     git log -- path/to/your/folder
+     ```
+   - Note the commit hash for the commit you want to amend.
+
+2. **Amend the commit message:**
+   - Use `git commit --amend` with the `-m` option to modify the commit message.
+     ```bash
+     git commit --amend -m "New and improved commit message for the folder"
+     ```
+   - Save and exit the editor.
+
+3. **Force push to the remote repository (if needed):**
+   - If you have already pushed the commit to the remote repository, you will need to force push to update the commit history.
+     ```bash
+     git push --force
+     ```
+     - **Note:** Be cautious when using force push, especially on shared branches, as it can overwrite changes from others.
+
+Keep in mind that amending commits and force pushing can have implications for collaborators, so it's important to communicate any changes to the repository. If others have based their work on the commit you're amending, it's generally best to avoid force pushing to prevent conflicts.
