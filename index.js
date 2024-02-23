@@ -37,7 +37,7 @@ app.listen(5000);
 
 /*
 tutorial 22: Remove extension from URL
-*/
+
 const publicPath = path.join(__dirname,'public');
 app.get('/',(req,res)=>{
     res.sendFile(`${publicPath}/index.html`);
@@ -56,3 +56,32 @@ app.get("*", (req, res) => {
 });
 
 app.listen(5000);
+*/
+
+/*
+tutorial 23: template engine
+************
+
+ */
+app.set("view engine", "ejs");
+app.get("/profile", (req, res) => {
+  const user ={
+     name:'shivaraj',
+     email:'shivaraj@gmail.com',
+     skills:{
+      programming: ['java','javascript','python']
+     }
+
+  };
+  res.render("profile",{user});
+
+});
+
+app.set("view engine", "ejs");
+app.get("", (req, res) => {
+  res.render("index");
+});
+
+app.listen(5000,()=>{
+ console.log("listening to port 5000");
+})

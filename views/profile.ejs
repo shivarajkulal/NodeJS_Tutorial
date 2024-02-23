@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home Page</title>
+    <style>
+        h1 {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Profile Page(ejs)</h1>
+    <h2>Name: <%= user.name %></h2>
+    <h2>Email: <%= user.email %></h2>
+    <h2>Skills: </h2>
+    <ul>
+        <% user.skills.programming.forEach((item) => { %>
+            <li><%= item %></li>
+        <% }) %>
+    </ul>
+</body>
+</html>
